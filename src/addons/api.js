@@ -492,8 +492,8 @@ class Tab extends EventTargetShim {
             procedureCode,
             arguments: args,
             callback,
-            color: '#29beb8',
-            secondaryColor: '#3aa8a4',
+            color: '#474747',
+            secondaryColor: '#414141',
             displayName
         });
 
