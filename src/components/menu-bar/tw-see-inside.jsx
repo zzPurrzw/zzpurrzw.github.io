@@ -23,7 +23,7 @@ const SeeInsideButton = ({
         onClick={onClick}
     >
         <FormattedMessage
-            defaultMessage="See inside"
+            defaultMessage="hop on editor"
             description="Label for see inside button"
             id="tw.menuBar.seeInside"
         />
