@@ -142,8 +142,8 @@ const Footer = () => (
             <div className={styles.footerText}>
                 <FormattedMessage
                     // eslint-disable-next-line max-len
-                    defaultMessage="PenguinMod and TurboWarp are not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
-                    description="Disclaimer that PenguinMod and TurboWarp are not connected to Scratch"
+                    defaultMessage="PenguinMod, TurboWarp and zzPurrzw are not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
+                    description="Disclaimer that PenguinMod, TurboWarp and zzPurrzw are not connected to Scratch"
                     id="tw.footer.disclaimer"
                 />
             </div>
@@ -156,7 +156,7 @@ const Footer = () => (
                             id="tw.footer.credits"
                         />
                     </a>
-                    <a href="https://penguinmod.com/donate">
+                    <a href="https://zzpurrzw.github.io/donate">
                         <FormattedMessage
                             defaultMessage="Donate"
                             description="Donation link in footer"
@@ -196,31 +196,31 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="https://penguinmod.com/terms">
+                    <a href="https://zzpurrzw.github.io/terms">
                         <FormattedMessage
                             defaultMessage="Terms of Service"
                             description="Link to Terms of Service"
                             id="pm.terms"
                         />
                     </a>
-                    <a href="https://penguinmod.com/privacy">
+                    <a href="https://zzpurrzw.github.io/privacy">
                         <FormattedMessage
                             defaultMessage="Privacy Policy"
                             description="Link to privacy policy"
                             id="tw.privacy"
                         />
                     </a>
-                    <a href="https://github.com/PenguinMod/PenguinMod-Home/issues">
+                    <a href="https://github.com/zzPurrzw/zzpurrzw.github.io/issues">
                         <FormattedMessage
                             defaultMessage="Feedback & Bugs"
                             description="Link to feedback/bugs page"
                             id="tw.feedback"
                         />
                     </a>
-                    <a href="https://github.com/PenguinMod">
+                    <a href="https://github.com/zzPurrzw">
                         <FormattedMessage
-                            defaultMessage="Source Code"
-                            description="Link to source code"
+                            defaultMessage="SUPER COOL AAAAAAAAAAAA Source Code"
+                            description="Link 2 teh source code"
                             id="tw.code"
                         />
                     </a>
