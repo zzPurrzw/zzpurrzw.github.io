@@ -168,19 +168,19 @@ module.exports = [
             }),
             new HtmlWebpackPlugin({
                 chunks: ['editor'], template: 'src/playground/index.ejs', filename: 'editor.html',
-                title: 'super very cool editor from zzPurrzw', ...htmlWebpackPluginCommon
+                title: 'zzPurrzw Editor', ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
                 chunks: ['playground'], template: 'src/playground/index.ejs', filename: 'playground.html',
-                title: 'zzPurrzw very cool playground', ...htmlWebpackPluginCommon
+                title: 'zzPurrzw Playground', ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
                 chunks: ['player'], template: 'src/playground/index.ejs', filename: 'index.html',
-                title: 'zzPurrzw - A mod of PenguinMod', ...htmlWebpackPluginCommon
+                title: 'zzPurrzw - Home', ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
                 chunks: ['fullscreen'], template: 'src/playground/index.ejs', filename: 'fullscreen.html',
-                title: 'zzPurrzw - A mod of PenguinMod', ...htmlWebpackPluginCommon
+                title: 'zzPurrzw - Fullscreen', ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
                 chunks: ['embed'], template: 'src/playground/index.ejs', filename: 'embed.html',
@@ -188,7 +188,7 @@ module.exports = [
             }),
             new HtmlWebpackPlugin({
                 chunks: ['addon-settings'], template: 'src/playground/simple.ejs', filename: 'addons.html',
-                title: 'addon settings - zzpurrzw', ...htmlWebpackPluginCommon
+                title: 'zzPurrzw Addons', ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
                 chunks: ['credits'], template: 'src/playground/simple.ejs', filename: 'credits.html',
