@@ -561,23 +561,42 @@ export default function (vm) {
         toolbox.position();
     });
 
-    // Define pm_run_stop block
-    ScratchBlocks.Blocks.pm_run_stop = {
+    // Define "if on edge" block for motion
+    ScratchBlocks.Blocks.motion_ifonedge_branch = {
         init: function() {
             this.jsonInit({
-                type: 'pm_run_stop',
-                message0: 'run %1',
+                type: 'motion_ifonedge_branch',
+                message0: 'if on edge, %1',
+                args0: [
+                    {
+                        type: 'input_statement',
+                        name: 'SUBSTACK'
+                    }
+                ],
+                colour: ScratchBlocks.Colours.motion.primary,
+                colourSecondary: ScratchBlocks.Colours.motion.secondary,
+                colourTertiary: ScratchBlocks.Colours.motion.tertiary,
+                extensions: ['shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.motion_ifonedge_shadow = {
+        init: function() {
+            this.jsonInit({
+                type: 'motion_ifonedge_shadow',
+                message0: '%1',
                 args0: [
                     {
                         type: 'field_label_serializable',
-                        name: 'STOP_LABEL',
-                        text: 'stop'
+                        name: 'SHADOW_LABEL',
+                        text: 'branch'
                     }
                 ],
-                colour: ScratchBlocks.Colours.control.primary,
-                colourSecondary: ScratchBlocks.Colours.control.secondary,
-                colourTertiary: ScratchBlocks.Colours.control.tertiary,
-                extensions: ['colours_control']
+                colour: ScratchBlocks.Colours.motion.primary,
+                colourSecondary: ScratchBlocks.Colours.motion.secondary,
+                colourTertiary: ScratchBlocks.Colours.motion.tertiary,
+                extensions: ['colours_motion']
             });
         }
     };

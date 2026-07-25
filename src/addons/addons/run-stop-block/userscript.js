@@ -1,49 +1,55 @@
 export default async function ({addon, console}) {
   const vm = addon.tab.traps.vm;
 
-  // Define a Scratch extension that provides the pm_run_stop functionality
-  class RunStopExtension {
-    static get EXTENSION_ID() {
-      return 'pm_runStop';
-    }
+  // Wait for ScratchBlocks to be loaded
+  let ScratchBlocks = window.ScratchBlocks;
+  let attempts = 0;
+  while (!ScratchBlocks && attempts < 50) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    ScratchBlocks = window.ScratchBlocks;
+    attempts++;
+  }
 
-    static get BLOCKS() {
-      return [
-        {
-          opcode: 'pm_run_stop',
-          blockType: 'command',
-          text: 'run [STOP_LABEL]',
-          arguments: {
-            STOP_LABEL: {
-              type: 'string',
-              defaultValue: 'stop'
-            }
-          }
-        }
-      ];
-    }
+  if (!ScratchBlocks) {
+    console.error('ScratchBlocks not loaded');
+    return;
+  }
 
+  // Monkey-patch to add run stop block to the toolbox
+  const originalGetXML = vm.runtime.getToolboxXML ? vm.runtime.getToolboxXML.bind(vm.runtime) : null;
+  
+  // Listen for when toolbox needs to be updated
+  addon.tab.blockly.workspace.toolbox_ && addon.tab.blockly.workspace.toolbox_.populate_(addon.tab.blockly.workspace.options.languageTree);
+
+  // Create extension that provides the "run stop" block
+  class PenguinRunStop {
     getInfo() {
       return {
-        id: RunStopExtension.EXTENSION_ID,
-        name: 'Run Stop Block',
-        blocks: RunStopExtension.BLOCKS,
-        menus: {}
+        id: 'penguin_runStop',
+        name: 'Run Stop',
+        blocks: [
+          {
+            opcode: 'stopScript',
+            blockType: ScratchBlocks.BlockType.COMMAND,
+            text: 'run [STOP]',
+            arguments: {
+              STOP: {
+                type: ScratchBlocks.ArgumentType.STRING,
+                defaultValue: 'stop'
+              }
+            }
+          }
+        ]
       };
     }
 
-    pm_run_stop() {
-      // Stop all scripts when this block runs
+    stopScript() {
       vm.runtime.stopAll();
     }
   }
 
-  // Register the extension if not already loaded
-  try {
-    if (!vm.extensionManager.isExtensionLoaded(RunStopExtension.EXTENSION_ID)) {
-      vm.extensionManager.registerExtension(new RunStopExtension());
-    }
-  } catch (e) {
-    console.log('Could not register run-stop extension:', e);
+  // Register the extension
+  if (!vm.extensionManager.isExtensionLoaded('penguin_runStop')) {
+    vm.extensionManager.registerExtension(new PenguinRunStop());
   }
 }

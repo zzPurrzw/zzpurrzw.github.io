@@ -160,6 +160,11 @@ const motion = function (isInitialSetup, isStage, targetId) {
         </block>
         ${blockSeparator}
         <block type="motion_ifonedgebounce"/>
+        <block type="motion_ifonedge_branch">
+            <value name="SUBSTACK">
+                <block type="motion_ifonedge_shadow"/>
+            </value>
+        </block>
         <block type="motion_ifonspritebounce">
             <value name="SPRITE">
                 <shadow type="motion_pointtowards_menu"></shadow>
@@ -748,7 +753,6 @@ const control = function (isInitialSetup, isStage) {
             </value>
         </block>
         <block type="control_stop"/>
-        <block type="pm_run_stop"/>
         ${blockSeparator}
         ${isStage ? `
             <block type="control_create_clone_of">
