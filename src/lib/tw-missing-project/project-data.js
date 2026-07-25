@@ -74,7 +74,7 @@ const projectData = () => ({
             currentCostume: 0,
             costumes: [
                 {
-                    name: "costume1",
+                    name: "frame1",
                     bitmapResolution: 1,
                     dataFormat: "svg",
                     assetId: "ae1546a5b361ee39fef852e385e47e18",

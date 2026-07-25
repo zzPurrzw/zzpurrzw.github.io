@@ -71,7 +71,7 @@ describe('Working with costumes', () => {
         await loadUri(uri);
         await clickText('Costumes');
 
-        await rightClickText('costume1', scope.costumesTab);
+        await rightClickText('frame1', scope.costumesTab);
         await clickText('duplicate', scope.costumesTab);
         await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for duplication to finish
 
@@ -87,7 +87,7 @@ describe('Working with costumes', () => {
         await clickText('Costumes');
 
         // Convert the first costume to bitmap.
-        await clickText('costume1', scope.costumesTab);
+        await clickText('frame1', scope.costumesTab);
         await clickText('Convert to Bitmap', scope.costumesTab);
 
         // Make sure mode switches back to vector for vector costume.
@@ -98,7 +98,7 @@ describe('Working with costumes', () => {
         await clickText('Sounds');
         await clickText('Costumes');
         await clickText('Convert to Vector', scope.costumesTab); // costume2
-        await clickText('costume1', scope.costumesTab);
+        await clickText('frame1', scope.costumesTab);
         await clickText('Convert to Vector', scope.costumesTab);
 
         const logs = await getLogs();
@@ -108,7 +108,7 @@ describe('Working with costumes', () => {
     test('Undo/redo in the paint editor', async () => {
         await loadUri(uri);
         await clickText('Costumes');
-        await clickText('costume1', scope.costumesTab);
+        await clickText('frame1', scope.costumesTab);
         await clickText('Convert to Bitmap', scope.costumesTab);
         await clickXpath('//img[@alt="Undo"]');
         await clickText('Convert to Bitmap', scope.costumesTab);

@@ -3,7 +3,7 @@ import projectData from './project-data';
 /* eslint-disable import/no-unresolved */
 import overrideDefaultProject from '!arraybuffer-loader!./default-project.sb3';
 import backdrop from '!raw-loader!./cd21514d0531fdffb22204e0ec5ed84a.svg';
-import costume1 from '!arraybuffer-loader!./Purr.png';
+import frame1 from '!arraybuffer-loader!./Purr.png';
 /* eslint-enable import/no-unresolved */
 import {TextEncoder} from '../tw-text-encoder';
 
@@ -39,7 +39,7 @@ const defaultProject = translator => {
         id: 'c434b674f2da18ba13cdfe51dbc05ecc',
         assetType: 'ImageBitmap',
         dataFormat: 'png',
-        data: new Uint8Array(costume1)
+        data: new Uint8Array(frame1)
     }];
 };
 export default defaultProject;
