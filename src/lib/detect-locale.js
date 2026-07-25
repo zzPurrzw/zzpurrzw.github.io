@@ -23,31 +23,19 @@ const detectLocale = supportedLocales => {
         }
     } catch (e) { /* ignore */ }
 
-    let locale = 'en'; // default
-    let browserLocale = window.navigator.userLanguage || window.navigator.language;
-    browserLocale = browserLocale.toLowerCase();
-    // try to set locale from browserLocale
-    if (supportedLocales.includes(browserLocale)) {
-        locale = browserLocale;
-    } else {
-        browserLocale = browserLocale.split('-')[0];
-        if (supportedLocales.includes(browserLocale)) {
-            locale = browserLocale;
-        }
-    }
-
+    let locale = 'en'; // default to English
+    
     const queryParams = queryString.parse(location.search);
     // Flatten potential arrays and remove falsy values
     const potentialLocales = [].concat(queryParams.locale, queryParams.lang).filter(l => l);
-    if (!potentialLocales.length) {
-        return locale;
+    if (potentialLocales.length) {
+        const urlLocale = potentialLocales[0].toLowerCase();
+        if (supportedLocales.includes(urlLocale)) {
+            return urlLocale;
+        }
     }
 
-    const urlLocale = potentialLocales[0].toLowerCase();
-    if (supportedLocales.includes(urlLocale)) {
-        return urlLocale;
-    }
-
+    // Always return English as default, ignoring browser language
     return locale;
 };
 

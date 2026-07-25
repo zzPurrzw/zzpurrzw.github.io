@@ -748,6 +748,7 @@ const control = function (isInitialSetup, isStage) {
             </value>
         </block>
         <block type="control_stop"/>
+        <block type="pm_run_stop"/>
         ${blockSeparator}
         ${isStage ? `
             <block type="control_create_clone_of">

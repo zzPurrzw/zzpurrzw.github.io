@@ -561,5 +561,26 @@ export default function (vm) {
         toolbox.position();
     });
 
+    // Define pm_run_stop block
+    ScratchBlocks.Blocks.pm_run_stop = {
+        init: function() {
+            this.jsonInit({
+                type: 'pm_run_stop',
+                message0: 'run %1',
+                args0: [
+                    {
+                        type: 'field_label_serializable',
+                        name: 'STOP_LABEL',
+                        text: 'stop'
+                    }
+                ],
+                colour: ScratchBlocks.Colours.control.primary,
+                colourSecondary: ScratchBlocks.Colours.control.secondary,
+                colourTertiary: ScratchBlocks.Colours.control.tertiary,
+                extensions: ['colours_control']
+            });
+        }
+    };
+
     return ScratchBlocks;
 }
