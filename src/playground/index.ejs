@@ -7,7 +7,7 @@
     <meta name="description" content="zzPurrzw is a PenguinMod mod that was made to add tons of cool stuff to allow for very cool projects." />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.options.root %>images/apple-touch-icon.png">
-    <link rel="icon" type="image/x-icon" href="./zzPurrzw.github.io/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="<%= htmlWebpackPlugin.options.root %>favicon.ico">
     <% if (htmlWebpackPlugin.options.root === "/" || htmlWebpackPlugin.options.root === "") { %>
       <link rel="manifest" href="<%= htmlWebpackPlugin.options.root %>manifest.webmanifest">
     <% } %>
@@ -54,7 +54,7 @@
         document.querySelector('#splash-content').style.display = 'block';
         <% if (!htmlWebpackPlugin.options.noTheme) { %>
         try {var localTheme = localStorage.getItem('tw:theme');} catch (e) {}
-        if (localTheme ? localTheme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches) document.querySelector('#splash').setAttribute('splash-theme', 'dark');
+        if (localTheme ? localTheme === 'dark' : true) document.querySelector('#splash').setAttribute('splash-theme', 'dark');
         <% } %>
       })();
     </script>

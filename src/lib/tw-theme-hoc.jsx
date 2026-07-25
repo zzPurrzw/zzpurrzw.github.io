@@ -14,7 +14,7 @@ export const getInitialDarkMode = () => {
     } catch (e) {
         // ignore
     }
-    return darkMediaQuery.matches;
+    return true;
 };
 
 const darkModeStylesheet = document.createElement('style');

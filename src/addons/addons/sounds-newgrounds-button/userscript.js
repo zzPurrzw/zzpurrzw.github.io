@@ -99,7 +99,7 @@ export default async function() {
     });
 
     const searchBtn = document.createElement("button");
-    searchBtn.setAttribute("style", "border: none; border-radius: 5px; padding: 10px 20px; margin: 10px 0 0; background: hsla(194, 100%, 50%, 1); cursor: pointer; font-weight: 600; font-size: 0.85rem; color: white;");
+    searchBtn.setAttribute("style", "border: none; border-radius: 5px; padding: 10px 20px; margin: 10px 0 0; background: #7F7F7F; cursor: pointer; font-weight: 600; font-size: 0.85rem; color: white;");
     searchBtn.textContent = "Search";
     searchBtn.addEventListener("click", async (e) => {
       // unfortunately we have to scrape html here since the Newgrounds API is hidden

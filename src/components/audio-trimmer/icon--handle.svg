@@ -10,7 +10,7 @@
         <g id="Bottom-Left" transform="translate(17.000000, 17.000000) scale(1, -1) translate(-17.000000, -17.000000) ">
             <use stroke="#7F7F7F33" stroke-width="8" xlink:href="#path-1"></use>
             <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-            <use stroke="#00a3ff" stroke-width="1" fill="#7F7F7F" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <use stroke="#7F7F7F" stroke-width="1" fill="#7F7F7F" fill-rule="evenodd" xlink:href="#path-1"></use>
         </g>
     </g>
 </svg>
