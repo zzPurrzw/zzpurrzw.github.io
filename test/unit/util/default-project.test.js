@@ -21,12 +21,12 @@ describe('defaultProject', () => {
         });
     });
 
-    test('the starter costume uses a custom zzPurrzw sprite asset', async () => {
+    test('the starter costume uses a custom Purr sprite asset', async () => {
         const zip = await JSZip.loadAsync(overrideDefaultProject);
         const costumeAsset = zip.file('c434b674f2da18ba13cdfe51dbc05ecc.svg');
         expect(costumeAsset).toBeTruthy();
 
         const costumeContent = await costumeAsset.async('string');
-        expect(costumeContent).toContain('zzPurrzw');
+        expect(costumeContent).toContain('Purr');
     });
 });
