@@ -61,7 +61,7 @@
   left: -2px;
   border: none;
   border-radius: 100%;
-  background-color: var(--editorDarkMode-primary, #7F7F7F);
+  background-color: var(--editorDarkMode-primary, #1FFF79);
 }
 [dir="rtl"] .sa-sprite-properties-info-btn {
   left: auto;
